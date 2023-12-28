@@ -12,7 +12,7 @@
             <x-slot name="headerActions">
                 <x-utils.link class="card-header-action" :href="route('admin.auth.user.index')" :text="__('Cancel')" />
             </x-slot>
-
+    
             <x-slot name="body">
                 <div class="form-group row">
                     <label for="password" class="col-md-2 col-form-label">@lang('Password')</label>

@@ -1,125 +1,34 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ appName() }}</title>
-        <meta name="description" content="@yield('meta_description', appName())">
-        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
-        @yield('meta')
+@extends('frontend.layouts.app')
 
-        @stack('before-styles')
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="{{ mix('css/frontend.css') }}" rel="stylesheet">
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+@section('title', __('Home'))
 
-            .full-height {
-                height: 100vh;
-            }
+@section('content')
+    <div class="container py-4">
+        @include('includes.partials.messages')
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis similique eos esse temporibus minus est numquam quia et facilis blanditiis modi id delectus inventore quas aliquam omnis necessitatibus nemo debitis quo libero, ea aut dicta a. Saepe aspernatur quidem corporis accusantium modi dolor, nisi nesciunt laboriosam nemo tempora veniam! A est doloribus obcaecati repudiandae, voluptatem, officia expedita quasi excepturi aspernatur cumque molestias perspiciatis vitae. Nihil facere animi sequi iure quisquam recusandae autem, sunt, amet necessitatibus quod porro eligendi labore facilis! Pariatur id velit accusamus, ullam ducimus, sequi omnis, cum adipisci est nihil temporibus odit tempora neque reprehenderit quod quibusdam voluptate dolorum excepturi! Perferendis labore consequatur iure quibusdam, voluptatum veniam ab eveniet. Quod culpa iusto accusantium omnis provident non dignissimos, sapiente labore, veritatis veniam sit tempore, praesentium nihil eum minus quasi at in. Id ipsa, ex veritatis nostrum quae earum facere accusantium enim. Rem placeat deserunt ea doloremque eos repudiandae atque reprehenderit iste numquam, ducimus fugit quibusdam, facilis quidem, quod similique non unde asperiores adipisci suscipit vitae itaque? Facilis tenetur dolores assumenda asperiores deleniti eum accusamus, fugit explicabo, reiciendis natus quasi optio. Incidunt ullam dolore, itaque numquam minima nam nisi, nulla sint optio nostrum accusamus. Voluptas consequuntur obcaecati dicta possimus aut et alias. Laudantium optio necessitatibus a aliquam voluptas quae dolores ex veniam possimus hic sed itaque, alias nisi iusto eum, non officiis at earum nam ipsum praesentium atque modi, repellendus ea? Est ullam repudiandae inventore consequatur id quae magnam expedita vitae laudantium odio vero ratione voluptatum similique exercitationem assumenda, suscipit iste nemo doloribus aperiam cum necessitatibus soluta. Consequuntur eum repellendus eos veritatis dicta eaque natus ratione exercitationem harum iure. Sunt nihil dolore odit est nobis corrupti placeat dolorem aperiam, accusamus sint? Fugit sed, impedit, ducimus asperiores illo ratione vitae perspiciatis ex minima eligendi eaque id iusto rerum iure fugiat nisi.</p>
 
-            .position-ref {
-                position: relative;
-            }
+        <div class="title m-b-md">
+            <example-component></example-component>
+        </div><!--title-->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        @if ($logged_in_user && $logged_in_user->subscribed('default', 'price_1OSHXiDWFQQ7ea7XSUZbtFfL'))
+            <p>You are subscribed.</p>
+        @else 
+            <a class="btn btn-primary" href="/testprod">Pricing</a>
+        @endif
 
-            .content {
-                text-align: center;
-            }
+        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+        <stripe-pricing-table
+            pricing-table-id="prctbl_1OSJQ2DWFQQ7ea7XmMjjIQOs"
+            publishable-key="pk_test_51OSHTVDWFQQ7ea7Xem4ABsawSU7MwD6zlWQNUNUmjCJCjafj0hB5da17IrVji08FccpoCjg3vrz7MOlXxjVPBgMN00YhCsovH0"
+            customer="{{ $logged_in_user ? $logged_in_user->stripe_id : '' }}"
+        >
+        </stripe-pricing-table>
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-        @stack('after-styles')
-    </head>
-    <body>
-        @include('includes.partials.read-only')
-        @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
-
-        <div id="app" class="flex-center position-ref full-height">
-            <div class="top-right links">
-                @auth
-                    @if ($logged_in_user->isUser())
-                        <a href="{{ route('frontend.user.dashboard') }}">@lang('Dashboard')</a>
-                    @endif
-
-                    <a href="{{ route('frontend.user.account') }}">@lang('Account')</a>
-                @else
-                    <a href="{{ route('frontend.auth.login') }}">@lang('Login')</a>
-
-                    @if (config('boilerplate.access.user.registration'))
-                        <a href="{{ route('frontend.auth.register') }}">@lang('Register')</a>
-                    @endif
-                @endauth
-            </div><!--top-right-->
-
-            <div class="container">
-                @include('includes.partials.messages')
-                
-                <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                <stripe-pricing-table
-                    pricing-table-id="prctbl_1OSJQ2DWFQQ7ea7XmMjjIQOs"
-                    publishable-key="pk_test_51OSHTVDWFQQ7ea7Xem4ABsawSU7MwD6zlWQNUNUmjCJCjafj0hB5da17IrVji08FccpoCjg3vrz7MOlXxjVPBgMN00YhCsovH0"
-                    customer="{{ $logged_in_user ? $logged_in_user->stripe_id : '' }}"
-                >
-                </stripe-pricing-table>
-
-                @if ($logged_in_user && $logged_in_user->subscribed('default', 'price_1OSHXiDWFQQ7ea7XSUZbtFfL'))
-                    <p>You are subscribed.</p>
-                @else 
-                    <a class="btn btn-primary" href="/testprod">Pricing</a>
-                @endif
-
-                <div class="title m-b-md">
-                    <example-component></example-component>
-                </div><!--title-->
-
-                <div class="links">
-                    <a href="http://laravel-boilerplate.com" target="_blank"><i class="fa fa-book"></i> @lang('Docs')</a>
-                    <a href="https://github.com/rappasoft/laravel-boilerplate" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                </div><!--links-->
-            </div><!--content-->
-        </div><!--app-->
-
-        @stack('before-scripts')
-        <script src="{{ mix('js/manifest.js') }}"></script>
-        <script src="{{ mix('js/vendor.js') }}"></script>
-        <script src="{{ mix('js/frontend.js') }}"></script>
-        @stack('after-scripts')
-    </body>
-</html>
+        <div class="links">
+            <a href="http://laravel-boilerplate.com" target="_blank"><i class="fa fa-book"></i> @lang('Docs')</a>
+            <a href="https://github.com/rappasoft/laravel-boilerplate" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div><!--links-->
+    </div><!--content-->
+@endsection

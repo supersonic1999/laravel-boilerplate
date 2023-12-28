@@ -10,7 +10,18 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <x-utils.link
+                        :href="route('frontend.pages.pricing')"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        class="nav-link"
+                        text="Pricing" />
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ms-auto">
                 @if(config('boilerplate.locale.status') && count(config('boilerplate.locale.languages')) > 1)
                     <li class="nav-item dropdown">
                         <x-utils.link

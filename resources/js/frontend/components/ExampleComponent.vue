@@ -1,5 +1,5 @@
 <template>
-    <span>Laravel Boilerplate</span>
+    <h1>Laravel Boilerplate</h1>
 </template>
 
 <script>
