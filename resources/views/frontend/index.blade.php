@@ -88,8 +88,22 @@
                 @endauth
             </div><!--top-right-->
 
-            <div class="content">
+            <div class="container">
                 @include('includes.partials.messages')
+                
+                <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+                <stripe-pricing-table
+                    pricing-table-id="prctbl_1OSJQ2DWFQQ7ea7XmMjjIQOs"
+                    publishable-key="pk_test_51OSHTVDWFQQ7ea7Xem4ABsawSU7MwD6zlWQNUNUmjCJCjafj0hB5da17IrVji08FccpoCjg3vrz7MOlXxjVPBgMN00YhCsovH0"
+                    customer="{{ $logged_in_user ? $logged_in_user->stripe_id : '' }}"
+                >
+                </stripe-pricing-table>
+
+                @if ($logged_in_user && $logged_in_user->subscribed('default', 'price_1OSHXiDWFQQ7ea7XSUZbtFfL'))
+                    <p>You are subscribed.</p>
+                @else 
+                    <a class="btn btn-primary" href="/testprod">Pricing</a>
+                @endif
 
                 <div class="title m-b-md">
                     <example-component></example-component>

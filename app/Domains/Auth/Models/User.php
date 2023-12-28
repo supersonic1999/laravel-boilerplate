@@ -20,6 +20,7 @@ use Illuminate\Notifications\Notifiable;
 use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Cashier\Billable;
 
 /**
  * Class User.
@@ -37,7 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         UserAttribute,
         UserMethod,
         UserRelationship,
-        UserScope;
+        UserScope,
+        Billable;
 
     public const TYPE_ADMIN = 'admin';
     public const TYPE_USER = 'user';

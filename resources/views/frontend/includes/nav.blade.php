@@ -5,7 +5,7 @@
             :text="appName()"
             class="navbar-brand" />
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('Toggle navigation')">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('Toggle navigation')">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -17,7 +17,7 @@
                             :text="__(getLocaleName(app()->getLocale()))"
                             class="nav-link dropdown-toggle"
                             id="navbarDropdownLanguageLink"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false" />
 
@@ -51,7 +51,7 @@
                             id="navbarDropdown"
                             class="nav-link dropdown-toggle"
                             role="button"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
                             v-pre
