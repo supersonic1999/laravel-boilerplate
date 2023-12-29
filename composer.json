@@ -18,7 +18,7 @@
         "lab404/laravel-impersonate": "^1.6",
         "langleyfoxall/laravel-nist-password-rules": "^4.1",
         "laravel/cashier": "*",
-        "laravel/framework": "^8.54",
+        "laravel/framework": "^8.83.27",
         "laravel/sanctum": "^2.11",
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.5",
@@ -101,7 +101,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "treeware/plant": true
+            "treeware/plant": true,
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "dev",
