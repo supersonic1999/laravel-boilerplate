@@ -2,7 +2,7 @@
     <div class="row my-5">
         @foreach ($userMonthlyPrices as $item)
             <div class="col col-12 col-md-4">
-                <img class="img-fluid" src="{{ $item->image }}" alt="" />
+                <img class="img-fluid mb-3" src="{{ $item->image }}" alt="" />
                 <h2>{{ $item->name }}</h2>
                 <p>£{{ $item->price }} per Month</p>
 
