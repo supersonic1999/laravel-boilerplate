@@ -12,7 +12,6 @@
     "devDependencies": {
         "@coreui/coreui": "^3.0.0",
         "@coreui/icons": "^1.0.1",
-        "@fortawesome/fontawesome-free": "^5.12.1",
         "@popperjs/core": "^2.5.1",
         "alpinejs": "^2.3.5",
         "axios": "^0.21.1",
@@ -30,6 +29,8 @@
         "sweetalert2": "^9.8.2"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
         "vue": "^3.3.13",
         "vue-loader": "^17.4.0",
         "vue-template-compiler": "^2.7.16"

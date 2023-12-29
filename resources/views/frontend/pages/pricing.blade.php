@@ -6,7 +6,7 @@
     <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab" aria-controls="home" aria-selected="true">Monthly</button>
                     </li>
