@@ -12,6 +12,7 @@ use App\Domains\Auth\Http\Controllers\Frontend\Auth\TwoFactorAuthenticationContr
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\UpdatePasswordController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\VerificationController;
 use Tabuna\Breadcrumbs\Trail;
+use Illuminate\Http\Request;
 
 /*
  * Frontend Access Controllers
@@ -19,6 +20,11 @@ use Tabuna\Breadcrumbs\Trail;
  */
 Route::group(['as' => 'auth.'], function () {
     Route::group(['middleware' => 'auth'], function () {
+        // Billing Portal
+        Route::get('/billing-portal', function (Request $request) {
+            return $request->user()->redirectToBillingPortal(route(homeRoute()));
+        })->name('billing.portal');
+
         // Authentication
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 

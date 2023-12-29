@@ -14,7 +14,7 @@
             </x-slot>
     
             <x-slot name="body">
-                <div class="form-group row">
+                <div class="input-group row mb-3">
                     <label for="password" class="col-md-2 col-form-label">@lang('Password')</label>
 
                     <div class="col-md-10">
@@ -22,7 +22,7 @@
                     </div>
                 </div><!--form-group-->
 
-                <div class="form-group row">
+                <div class="input-group row mb-0">
                     <label for="password_confirmation" class="col-md-2 col-form-label">@lang('Password Confirmation')</label>
 
                     <div class="col-md-10">

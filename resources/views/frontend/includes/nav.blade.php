@@ -11,7 +11,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <x-utils.link
                         :href="route('frontend.pages.pricing')"
                         aria-haspopup="true"
@@ -93,6 +93,11 @@
                                 :href="route('frontend.user.account')"
                                 :active="activeClass(Route::is('frontend.user.account'))"
                                 :text="__('My Account')"
+                                class="dropdown-item" />
+
+                            <x-utils.link
+                                :href="route('frontend.auth.billing.portal')"
+                                text="Billing Portal"
                                 class="dropdown-item" />
 
                             <x-utils.link

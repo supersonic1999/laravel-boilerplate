@@ -15,7 +15,7 @@
                         <p>@lang('Generate a code from your 2FA app and enter it below:')</p>
 
                         <x-forms.delete :action="route('frontend.auth.account.2fa.destroy')" name="confirm-item">
-                            <div class="form-group row">
+                            <div class="input-group row mb-3">
                                 <label for="code" class="col-md-4 col-form-label text-md-right">@lang('Authorization Code')</label>
 
                                 <div class="col-md-6">

@@ -17,7 +17,7 @@
 
             <x-slot name="body">
                 <div x-data="{userType : '{{ $model::TYPE_USER }}'}">
-                    <div class="form-group row">
+                    <div class="input-group row mb-3">
                         <label for="name" class="col-md-2 col-form-label">@lang('Type')</label>
 
                         <div class="col-md-10">
@@ -28,7 +28,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="input-group row mb-3">
                         <label for="name" class="col-md-2 col-form-label">@lang('Name')</label>
 
                         <div class="col-md-10">
@@ -36,7 +36,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="input-group row mb-3">
                         <label for="email" class="col-md-2 col-form-label">@lang('E-mail Address')</label>
 
                         <div class="col-md-10">
@@ -44,7 +44,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="input-group row mb-3">
                         <label for="password" class="col-md-2 col-form-label">@lang('Password')</label>
 
                         <div class="col-md-10">
@@ -52,7 +52,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="input-group row mb-3">
                         <label for="password_confirmation" class="col-md-2 col-form-label">@lang('Password Confirmation')</label>
 
                         <div class="col-md-10">
@@ -60,7 +60,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="input-group row mb-3">
                         <label for="active" class="col-md-2 col-form-label">@lang('Active')</label>
 
                         <div class="col-md-10">
@@ -71,7 +71,7 @@
                     </div><!--form-group-->
 
                     <div x-data="{ emailVerified : false }">
-                        <div class="form-group row">
+                        <div class="input-group row mb-3">
                             <label for="email_verified" class="col-md-2 col-form-label">@lang('E-mail Verified')</label>
 
                             <div class="col-md-10">
@@ -89,7 +89,7 @@
                         </div><!--form-group-->
 
                         <div x-show="!emailVerified">
-                            <div class="form-group row">
+                            <div class="input-group row mb-3">
                                 <label for="send_confirmation_email" class="col-md-2 col-form-label">@lang('Send Confirmation E-mail')</label>
 
                                 <div class="col-md-10">

@@ -23,17 +23,17 @@
                                 <input type="hidden" name="remember" value="on">
                             @endif
 
-                            <div class="form-group row">
+                            <div class="input-group row mb-3">
                                 <label for="{{ $input }}" class="col-md-4 col-form-label text-md-right">@lang('Authentication Code')</label>
 
                                 <div class="col-md-6">
                                     <input type="text"
-                                           name="{{ $input }}"
-                                           id="{{ $input }}"
-                                           class="form-control {{ $error ? 'is-invalid' : '' }}"
-                                           placeholder="123456"
-                                           minlength="6"
-                                           required />
+                                        name="{{ $input }}"
+                                        id="{{ $input }}"
+                                        class="form-control {{ $error ? 'is-invalid' : '' }}"
+                                        placeholder="123456"
+                                        minlength="6"
+                                        required />
 
                                     @if($error)
                                         <div class="invalid-feedback">
@@ -43,7 +43,7 @@
                                 </div>
                             </div><!--form-group-->
 
-                            <div class="form-group row mb-0">
+                            <div class="input-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button class="btn btn-primary" type="submit">@lang('Confirm Code')</button>
                                 </div>
