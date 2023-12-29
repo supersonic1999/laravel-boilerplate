@@ -34,10 +34,10 @@
 
                 <ul class="list-unstyled">
                     <li><a href="tel:000-000-000">
-                        <i class="fas fa-solid fa-phone me-3"></i>000-000-000
+                        <i class="fa-solid fa-phone me-3"></i>000-000-000
                     </a></li>
                     <li><a href="mailto:example@sasstest.io">
-                        <i class="fas fa-solid fa-envelope me-3"></i>example@sasstest.io
+                        <i class="fa-solid fa-envelope me-3"></i>example@sasstest.io
                     </a></li>
                 </ul>
             </div>
