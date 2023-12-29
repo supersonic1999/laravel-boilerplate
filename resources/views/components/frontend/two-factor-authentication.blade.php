@@ -20,12 +20,12 @@
                     required
                     autofocus />
             </div>
-        </div><!--form-group-->
+        </div><!--input-group-->
 
         <div class="input-group row mb-0">
             <div class="col-md-8 offset-md-4">
                 <button class="btn btn-primary" type="submit">@lang('Enable Two Factor Authentication')</button>
             </div>
-        </div><!--form-group-->
+        </div><!--input-group-->
 </form>
 </div>

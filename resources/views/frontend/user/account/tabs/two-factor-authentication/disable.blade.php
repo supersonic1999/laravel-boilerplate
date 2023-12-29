@@ -21,7 +21,7 @@
                                 <div class="col-md-6">
                                     <input type="text" name="code" id="code" maxlength="10" class="form-control" placeholder="{{ __('Authorization Code') }}" required />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <button class="btn btn-sm btn-block btn-danger" type="submit">@lang('Remove Two Factor Authentication')</button>
                         </x-forms.delete>

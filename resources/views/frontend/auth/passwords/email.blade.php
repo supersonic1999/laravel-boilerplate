@@ -19,13 +19,13 @@
                                 <div class="col-md-8">
                                     <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" placeholder="{{ __('E-mail Address') }}" maxlength="255" required autofocus autocomplete="email" />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <div class="input-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button class="btn btn-primary" type="submit">@lang('Send Password Reset Link')</button>
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
                         </x-forms.post>
                     </x-slot>
                 </x-frontend.card>

@@ -19,7 +19,7 @@
                                 <div class="col-md-8">
                                     <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="name" />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <div class="input-group row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">@lang('E-mail Address')</label>
@@ -27,7 +27,7 @@
                                 <div class="col-md-8">
                                     <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required autocomplete="email" />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <div class="input-group row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Password')</label>
@@ -35,7 +35,7 @@
                                 <div class="col-md-8">
                                     <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="new-password" />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <div class="input-group row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Password Confirmation')</label>
@@ -43,7 +43,7 @@
                                 <div class="col-md-8">
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="new-password" />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <div class="input-group row mb-3">
                                 <div class="col-md-8 offset-md-4">
@@ -54,7 +54,7 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             @if(config('boilerplate.access.captcha.registration'))
                                 <div class="input-group row mb-3">
@@ -67,7 +67,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <button class="btn btn-primary" type="submit">@lang('Register')</button>
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
                         </x-forms.post>
                     </x-slot>
                 </x-frontend.card>

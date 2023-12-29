@@ -12,6 +12,9 @@ class HomeController
      */
     public function index()
     {
-        return view('frontend.index');
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+        $prodData = $stripe->products->all()->data;
+
+        return view('frontend.index', ['prodData' => $prodData]);
     }
 }

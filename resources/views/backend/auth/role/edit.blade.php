@@ -26,7 +26,7 @@
                                 <option value="{{ $model::TYPE_ADMIN }}" {{ $role->type === $model::TYPE_ADMIN ? 'selected' : '' }}>@lang('Administrator')</option>
                             </select>
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-0">
                         <label for="name" class="col-md-2 col-form-label">@lang('Name')</label>
@@ -34,7 +34,7 @@
                         <div class="col-md-10">
                             <input type="text"  name="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') ?? $role->name }}" maxlength="100" required />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     @include('backend.auth.includes.permissions')
                 </div>

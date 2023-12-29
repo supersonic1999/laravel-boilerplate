@@ -98,6 +98,7 @@
                             <x-utils.link
                                 :href="route('frontend.auth.billing.portal')"
                                 text="Billing Portal"
+                                target="_blank"
                                 class="dropdown-item" />
 
                             <x-utils.link

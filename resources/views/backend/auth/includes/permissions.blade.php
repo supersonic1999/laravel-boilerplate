@@ -12,4 +12,4 @@
             @include('backend.auth.includes.partials.permission-type', ['type' => $model::TYPE_USER])
         </div>
     </div>
-</div><!--form-group-->
+</div><!--input-group-->

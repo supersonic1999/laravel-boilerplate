@@ -26,7 +26,7 @@
                                 <option value="{{ $model::TYPE_ADMIN }}">@lang('Administrator')</option>
                             </select>
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-0">
                         <label for="name" class="col-md-2 col-form-label">@lang('Name')</label>

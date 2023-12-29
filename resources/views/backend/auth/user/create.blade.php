@@ -26,7 +26,7 @@
                                 <option value="{{ $model::TYPE_ADMIN }}">@lang('Administrator')</option>
                             </select>
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-3">
                         <label for="name" class="col-md-2 col-form-label">@lang('Name')</label>
@@ -34,7 +34,7 @@
                         <div class="col-md-10">
                             <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') }}" maxlength="100" required />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-3">
                         <label for="email" class="col-md-2 col-form-label">@lang('E-mail Address')</label>
@@ -42,7 +42,7 @@
                         <div class="col-md-10">
                             <input type="email" name="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-3">
                         <label for="password" class="col-md-2 col-form-label">@lang('Password')</label>
@@ -50,7 +50,7 @@
                         <div class="col-md-10">
                             <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="new-password" />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-3">
                         <label for="password_confirmation" class="col-md-2 col-form-label">@lang('Password Confirmation')</label>
@@ -58,7 +58,7 @@
                         <div class="col-md-10">
                             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="new-password" />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-3">
                         <label for="active" class="col-md-2 col-form-label">@lang('Active')</label>
@@ -68,7 +68,7 @@
                                 <input name="active" id="active" class="form-check-input" type="checkbox" value="1" {{ old('active', true) ? 'checked' : '' }} />
                             </div><!--form-check-->
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div x-data="{ emailVerified : false }">
                         <div class="input-group row mb-3">
@@ -86,7 +86,7 @@
                                         {{ old('email_verified') ? 'checked' : '' }} />
                                 </div><!--form-check-->
                             </div>
-                        </div><!--form-group-->
+                        </div><!--input-group-->
 
                         <div x-show="!emailVerified">
                             <div class="input-group row mb-3">
@@ -103,7 +103,7 @@
                                             {{ old('send_confirmation_email') ? 'checked' : '' }} />
                                     </div><!--form-check-->
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
                         </div>
                     </div>
 

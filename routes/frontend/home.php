@@ -31,13 +31,25 @@ Route::get('pricing', [PricingController::class, 'index'])
     });
     
     
-Route::get('/testprod', function (Request $request) {
-    return $request->user()
-        ->newSubscription('default', 'price_1OSHXiDWFQQ7ea7XSUZbtFfL')
-        // ->trialDays(5)
-        ->allowPromotionCodes()
-        ->checkout([
-            'success_url' => route('frontend.pages.terms'),
-            'cancel_url' => route('frontend.index'),
-        ]);
+Route::group(['as' => 'product.'], function () {
+    Route::get('prod_PGsK9wXT2ejQvc', function (Request $request) {
+        return $request->user()
+            ->newSubscription('default', 'price_1OSdEeDWFQQ7ea7XumYdXXsM')
+            ->trialDays(5)
+            ->allowPromotionCodes()
+            ->checkout([
+                'success_url' => route('frontend.pages.terms'),
+                'cancel_url' => route('frontend.index'),
+            ]);
+    })->name('prod_PGsK9wXT2ejQvc');
+
+    Route::get('prod_PGpCbfZ8LFARj6', function (Request $request) {
+        return $request->user()
+            ->newSubscription('default', 'price_1OSdFLDWFQQ7ea7XcFgc9vIs')
+            ->allowPromotionCodes()
+            ->checkout([
+                'success_url' => route('frontend.pages.terms'),
+                'cancel_url' => route('frontend.index'),
+            ]);
+    })->name('prod_PGpCbfZ8LFARj6');
 });

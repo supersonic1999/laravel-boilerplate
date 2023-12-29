@@ -27,7 +27,7 @@
                                     <option value="{{ $model::TYPE_ADMIN }}" {{ $user->type === $model::TYPE_ADMIN ? 'selected' : '' }}>@lang('Administrator')</option>
                                 </select>
                             </div>
-                        </div><!--form-group-->
+                        </div><!--input-group-->
                     @endif
 
                     <div class="input-group row mb-3">
@@ -36,7 +36,7 @@
                         <div class="col-md-10">
                             <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') ?? $user->name }}" maxlength="100" required />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     <div class="input-group row mb-0">
                         <label for="email" class="col-md-2 col-form-label">@lang('E-mail Address')</label>
@@ -44,7 +44,7 @@
                         <div class="col-md-10">
                             <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') ?? $user->email }}" maxlength="255" required />
                         </div>
-                    </div><!--form-group-->
+                    </div><!--input-group-->
 
                     @if (!$user->isMasterAdmin())
                         @include('backend.auth.includes.roles')

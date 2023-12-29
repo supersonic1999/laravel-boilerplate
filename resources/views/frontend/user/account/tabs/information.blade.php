@@ -5,7 +5,7 @@
         <div class="col-md-9">
             <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') ?? $logged_in_user->name }}" required autofocus autocomplete="name" />
         </div>
-    </div><!--form-group-->
+    </div><!--input-group-->
 
     @if ($logged_in_user->canChangeEmail())
         <div class="input-group row mb-3">
@@ -18,12 +18,12 @@
 
                 <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') ?? $logged_in_user->email }}" required autocomplete="email" />
             </div>
-        </div><!--form-group-->
+        </div><!--input-group-->
     @endif
 
     <div class="input-group row mb-0">
         <div class="col-md-12 text-right">
             <button class="btn btn-sm btn-primary float-right" type="submit">@lang('Update')</button>
         </div>
-    </div><!--form-group-->
+    </div><!--input-group-->
 </x-forms.patch>

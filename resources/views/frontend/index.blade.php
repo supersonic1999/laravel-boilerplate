@@ -15,20 +15,11 @@
         @if ($logged_in_user && $logged_in_user->subscribed('default', 'price_1OSHXiDWFQQ7ea7XSUZbtFfL'))
             <p>You are subscribed.</p>
         @else 
-            <a class="btn btn-primary" href="/testprod">Pricing</a>
+            <a class="btn btn-primary" href="/pricing">Pricing</a>
         @endif
 
-        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-        <stripe-pricing-table
-            pricing-table-id="prctbl_1OSJQ2DWFQQ7ea7XmMjjIQOs"
-            publishable-key="pk_test_51OSHTVDWFQQ7ea7Xem4ABsawSU7MwD6zlWQNUNUmjCJCjafj0hB5da17IrVji08FccpoCjg3vrz7MOlXxjVPBgMN00YhCsovH0"
-            customer="{{ $logged_in_user ? $logged_in_user->stripe_id : '' }}"
-        >
-        </stripe-pricing-table>
+        @include('frontend.includes.partials.pricing')
 
-        <div class="links">
-            <a href="http://laravel-boilerplate.com" target="_blank"><i class="fa fa-book"></i> @lang('Docs')</a>
-            <a href="https://github.com/rappasoft/laravel-boilerplate" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        </div><!--links-->
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, doloremque! Accusantium, minima repellat veritatis totam distinctio quia temporibus tempora dolorem quo? Recusandae, aspernatur dignissimos architecto molestiae dicta explicabo quisquam nihil nostrum exercitationem, porro tenetur. Similique sapiente error alias amet animi, accusantium temporibus placeat est at tenetur vel libero, facere quasi? Optio libero ullam maxime hic eveniet ex? Illum necessitatibus sint dolores libero at. Maxime, magnam velit! Consectetur esse reprehenderit enim omnis ut minus ratione saepe assumenda consequuntur perferendis iusto ipsum praesentium, veniam sapiente et sequi sint, quam quo dignissimos, adipisci nemo accusantium? Sit, inventore? Voluptatibus aperiam corrupti at culpa qui! Aliquam quibusdam sit tempora reiciendis dolore placeat velit corrupti rem excepturi, esse cupiditate odit rerum necessitatibus quasi nesciunt molestias labore reprehenderit nobis consequuntur sequi ut expedita fugit quos commodi? Eos molestias laboriosam sint nesciunt minus. At nesciunt fuga voluptatem, reprehenderit blanditiis dicta beatae minima dolorum voluptas facilis quisquam. Distinctio nemo voluptas quibusdam natus neque repudiandae ullam corporis voluptatem totam, aliquid sit quas quam minus ex expedita animi laboriosam et ab itaque! A quia ut iste omnis. Aliquam dolorem ea neque ab reprehenderit porro laboriosam, officiis quaerat culpa. Nesciunt, voluptate nostrum atque eum aliquid, voluptatem accusamus ipsa minima at earum dicta!</p>
     </div><!--content-->
 @endsection

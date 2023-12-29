@@ -12,6 +12,9 @@ class PricingController
      */
     public function index()
     {
-        return view('frontend.pages.pricing');
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+        $prodData = $stripe->products->all()->data;
+
+        return view('frontend.pages.pricing', ['prodData' => $prodData]);
     }
 }

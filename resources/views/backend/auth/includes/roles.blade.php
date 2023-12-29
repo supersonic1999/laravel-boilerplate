@@ -10,4 +10,4 @@
             @include('backend.auth.includes.partials.role-type', ['type' => $model::TYPE_USER])
         </div>
     </div>
-</div><!--form-group-->
+</div><!--input-group-->

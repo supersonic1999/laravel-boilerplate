@@ -19,13 +19,13 @@
                                 <div class="col-md-6">
                                     <input type="password" name="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="current-password" />
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
 
                             <div class="input-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button class="btn btn-primary" type="submit">@lang('Confirm Password')</button>
                                 </div>
-                            </div><!--form-group-->
+                            </div><!--input-group-->
                         </x-forms.post>
                     </x-slot>
                 </x-frontend.card>
