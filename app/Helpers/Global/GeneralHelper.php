@@ -50,3 +50,47 @@ if (! function_exists('homeRoute')) {
         return 'frontend.index';
     }
 }
+
+if (! function_exists('getStripeData')) {
+    function getStripeData()
+    {
+        $userMonthlyPrices = [];
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+
+        if (Session::missing('userMonthlyPrices')) {
+            $userMonthlyPrices = $stripe->prices->all(['lookup_keys' => [
+                'user_basic_monthly',
+                'user_premium_monthly'
+            ], 'active' => true])->data;
+
+            Session::put('userMonthlyPrices', $userMonthlyPrices);
+        } else {
+            $userMonthlyPrices = Session::get('userMonthlyPrices');
+        }
+
+        if (Session::missing('userYearlyPrices')) {
+            $userYearlyPrices = $stripe->prices->all(['lookup_keys' => [
+                'user_basic_yearly',
+                'user_premium_yearly'
+            ], 'active' => true])->data;
+
+            Session::put('userYearlyPrices', $userYearlyPrices);
+        } else {
+            $userYearlyPrices = Session::get('userYearlyPrices');
+        }
+
+        if (Session::missing('productData')) {
+            $productData = $stripe->products->all(['active' => true])->data;
+
+            Session::put('productData', $productData);
+        } else {
+            $productData = Session::get('productData');
+        }
+
+        return [
+            'productData' => $productData,
+            'userMonthlyPrices' => $userMonthlyPrices,
+            'userYearlyPrices' => $userYearlyPrices,
+        ];
+    }
+}

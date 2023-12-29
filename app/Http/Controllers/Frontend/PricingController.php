@@ -12,9 +12,41 @@ class PricingController
      */
     public function index()
     {
-        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
-        $prodData = $stripe->products->all()->data;
+        $userMonthlyPrices = [];
+        $userYearlyPrices = [];
+        $stripeData = getStripeData();
+        
+        foreach ($stripeData['userMonthlyPrices'] as $key => $pricing) {
+            $newArray = (object) [];
+            $product = array_values(array_filter($stripeData['productData'], function ($var) use ($pricing) {
+                return ($var->id == $pricing->product);
+            }))[0];
 
-        return view('frontend.pages.pricing', ['prodData' => $prodData]);
+            $newArray->id = $pricing->id;
+            $newArray->name = $product->name;
+            $newArray->image = $product->images[0] ?? '';
+            $newArray->price = number_format($pricing->unit_amount / 100, 2);
+
+            array_push($userMonthlyPrices, $newArray);
+        }
+
+        foreach ($stripeData['userYearlyPrices'] as $key => $pricing) {
+            $newArray = (object) [];
+            $product = array_values(array_filter($stripeData['productData'], function ($var) use ($pricing) {
+                return ($var->id == $pricing->product);
+            }))[0];
+
+            $newArray->id = $pricing->id;
+            $newArray->name = $product->name;
+            $newArray->image = $product->images[0] ?? '';
+            $newArray->price = number_format($pricing->unit_amount / 100, 2);
+
+            array_push($userYearlyPrices, $newArray);
+        }
+
+        return view('frontend.pages.pricing', [
+            'userMonthlyPrices' => $userMonthlyPrices,
+            'userYearlyPrices' => $userYearlyPrices,
+        ]);
     }
 }

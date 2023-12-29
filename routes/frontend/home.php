@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\TermsController;
 use App\Http\Controllers\Frontend\PricingController;
 use Tabuna\Breadcrumbs\Trail;
 use Illuminate\Http\Request;
+use App\Http\Middleware\Subscribed;
 
 /*
  * Frontend Controllers
@@ -31,25 +32,25 @@ Route::get('pricing', [PricingController::class, 'index'])
     });
     
     
-Route::group(['as' => 'product.'], function () {
-    Route::get('prod_PGsK9wXT2ejQvc', function (Request $request) {
+Route::group(['as' => 'product.', 'middleware' => [Subscribed::class]], function () {
+    Route::get('price_1OSHXiDWFQQ7ea7XSUZbtFfL', function (Request $request) {
         return $request->user()
-            ->newSubscription('default', 'price_1OSdEeDWFQQ7ea7XumYdXXsM')
+            ->newSubscription('default', 'price_1OSHXiDWFQQ7ea7XSUZbtFfL')
             ->trialDays(5)
             ->allowPromotionCodes()
             ->checkout([
                 'success_url' => route('frontend.pages.terms'),
                 'cancel_url' => route('frontend.index'),
             ]);
-    })->name('prod_PGsK9wXT2ejQvc');
+    })->name('price_1OSHXiDWFQQ7ea7XSUZbtFfL');
 
-    Route::get('prod_PGpCbfZ8LFARj6', function (Request $request) {
+    Route::get('price_1OSKa4DWFQQ7ea7XF50n1FAV', function (Request $request) {
         return $request->user()
-            ->newSubscription('default', 'price_1OSdFLDWFQQ7ea7XcFgc9vIs')
+            ->newSubscription('default', 'price_1OSKa4DWFQQ7ea7XF50n1FAV')
             ->allowPromotionCodes()
             ->checkout([
                 'success_url' => route('frontend.pages.terms'),
                 'cancel_url' => route('frontend.index'),
             ]);
-    })->name('prod_PGpCbfZ8LFARj6');
+    })->name('price_1OSKa4DWFQQ7ea7XF50n1FAV');
 });
