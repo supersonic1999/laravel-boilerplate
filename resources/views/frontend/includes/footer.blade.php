@@ -45,6 +45,6 @@
     </div>
 
     <div class="footer-copyright container py-3">
-        <p class="mb-0">© 2024 Copyright: sasstest.io</p>
+        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Copyright: sasstest.io</p>
     </div>
 </footer>
